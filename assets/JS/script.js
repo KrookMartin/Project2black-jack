@@ -6,9 +6,10 @@ let cardType = ['C', 'D', 'H', 'S'];
 
  window.onload = function() {
      createDeck();
+     cardShuffle();
  }
  /**
-  * 
+  * Loops thru all values and pairs cardType and cardValue and creats an array
   */
  function createDeck() {
 
@@ -24,3 +25,13 @@ let cardType = ['C', 'D', 'H', 'S'];
      }
      console.log(cardDeck);
  }
+
+ function cardShuffle () {
+     for(let i = 0; i <cardDeck.length; i++){
+        let j = Math.floor(Math.random() * cardDeck.length);
+        let swap = cardDeck[i];
+        cardDeck[i] = cardDeck[j];
+        cardDeck[j] = swap;
+     }
+     console.log(cardDeck);
+    }
